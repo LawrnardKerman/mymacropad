@@ -10,7 +10,7 @@ void setup() {
   pinMode(D0, INPUT);
   pinMode(D1, INPUT);
   pinMode(D4, INPUT);//rotary encoder push button
-  pinMode(D7, INPUT);
+  pinMode(D7, INPUT);//special key
   pinMode(D8, INPUT);
   pinMode(D9, INPUT);
   Keyboard.begin();
@@ -25,26 +25,33 @@ void setup() {
   
 }
 
-boolean buttons[6];
-String keys[6]={"test1","test2", "test3", "test4", "test5", "test6"};//set what to type using macropad here
+boolean buttons[5];
+String keys[5]={"test1","test2", "test3", "test4", "test5"};//set what to type using macropad here
+String keysB[5]={"test1B","test2B", "test3B", "test4B", "test5B"};//set what to type using macropad here
 void loop() {
   for(int i=0; i<6; i++){
     if(i==0){buttons[i]=(D0==HIGH);} 
     if(i==1){buttons[i]=(D1==HIGH);} 
-    if(i==2){buttons[i]=(D3==HIGH);} 
-    if(i==3){buttons[i]=(D7==HIGH);} 
-    if(i==4){buttons[i]=(D8==HIGH);} 
-    if(i==5){buttons[i]=(D9==HIGH);} 
+    if(i==2){buttons[i]=(D3==HIGH);}
+    if(i==3){buttons[i]=(D8==HIGH);} 
+    if(i==4){buttons[i]=(D9==HIGH);} 
+    if(i==4){buttons[i]=(D7==HIGH);} 
   }
   
-  for(int i=0; i<6; i++){
-    if(buttons[i]==true){
-      Keyboard.print(keys[i]);
+  for(int i=0; i<5; i++){
+    if(buttons[5]){
+      if(buttons[i]){
+        Keyboard.print(keys[i]);
+      }
+    }else{
+      if(buttons[i]){
+        Keyboard.print(keysB[i]);
+      }
     }
   }
   boolean led=false;
   for(int i=0; i<6; i++){
-    if(buttons[i]==true){
+    if(buttons[i]){
       led=true;
     }
   }
@@ -55,6 +62,7 @@ void loop() {
   }
   static int lastCounter = 0;
   if(counter != lastCounter){
+    if(buttons[5]){
     if(lastCounter>counter){
       Keyboard.press(KEY_LEFT_ARROW);
       delay(15);
@@ -65,6 +73,18 @@ void loop() {
       Keyboard.release(KEY_RIGHT_ARROW);
     }
     lastCounter = counter;
+  }else{
+    if(lastCounter>counter){
+      Keyboard.press(KEY_UP_ARROW);
+      delay(15);
+      Keyboard.release(KEY_UP_ARROW);
+    }else if(lastCounter<counter){
+      Keyboard.press(KEY_DOWN_ARROW);
+      delay(15);
+      Keyboard.release(KEY_DOWN_ARROW);
+    }
+    lastCounter = counter;
+  }
   }
 
 
