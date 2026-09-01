@@ -1,2 +1,0 @@
-note: the pcb traces and some of the components are outdated, should still work though
-onshape link : https://cad.onshape.com/documents/43d22975be5866152dda32ee/w/25548284fc252923895191e8/e/bf46a1425b9c9d89cdf0b8b1?renderMode=0&uiState=6a942e74703c2e93da4de2d2
