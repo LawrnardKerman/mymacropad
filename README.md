@@ -5,3 +5,4 @@ silly macropad :3
 <img width="1012" height="723" alt="image" src="https://github.com/user-attachments/assets/975512cb-8165-45c8-9aa2-a3bfe497c7b8" />
 <img width="1298" height="718" alt="image" src="https://github.com/user-attachments/assets/82abad60-3ff4-4f16-be93-067c8a4fd8af" />
 <img width="622" height="189" alt="image" src="https://github.com/user-attachments/assets/4103dc79-48f5-46ef-91ae-02f251a461fd" />
+onshape link: https://cad.onshape.com/documents/43d22975be5866152dda32ee/w/25548284fc252923895191e8/e/8e7716d520c439ebb7f659c6?renderMode=0&uiState=6a9d54876a2ca21d8aef6d35
